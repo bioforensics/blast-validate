@@ -1,6 +1,11 @@
 **************************************************
 **************************************************
 
+Download and install the [ART read simulator](https://omictools.com/art-tool) and [Krona](https://github.com/marbl/Krona)
+
+**************************************************
+**************************************************
+
 Simulate reads with ART, example:
 
 art_illumina -ss HS25 -i B_anthracis_Ames.fa -p -l 250 -f 10 -m 868 -s 408 -o ba_ART_sim -1 /usr/local/packages/art_bin_MountRainier/Illumina_profiles/HiSeq2500L250R1.txt -2 /usr/local/packages/art_bin_MountRainier/Illumina_profiles/HiSeq2500L250R2.txt
