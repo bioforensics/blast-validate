@@ -18,14 +18,14 @@ art_illumina -ss HS25 -i B_anthracis_Ames.fa -p -l 250 -f 10 -m 868 -s 408 -o ba
 
 Run parameter sweep, example:
 
-./blastValidate.pl -e -2,-4,-8,-16,-24 -b 5,6,7 -x -t 1392 ba_ART_sim.fasta ba_ART_sim
+perl scripts/blastValidate.pl -e -2,-4,-8,-16,-24 -b 5,6,7 -x -t 1392 ba_ART_sim.fasta ba_ART_sim
 
 **************************************************
 **************************************************
 
 Evaluate parameter sweep, example:
 
-./evaluate_parameter_sweep.pl 1392 /path/to/B_anthracis/LCA/files /path/to/B_cereus (near neighbor)/LCA/files
+perl scripts/evaluate_parameter_sweep.pl 1392 /path/to/B_anthracis/LCA/files /path/to/B_cereus (near neighbor)/LCA/files
 
 **************************************************
 **************************************************
