@@ -1,0 +1,3 @@
+[submodule "scripts/Krona"]
+	path = scripts/Krona
+	url = https://github.com/marbl/Krona.git
