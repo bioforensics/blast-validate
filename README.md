@@ -1,3 +1,7 @@
+Preprint available at <https://doi.org/10.1101/181636>
+
+> Bazinet, A. L., Ondov, B. D., Sommer, D. D., & Ratnayake, S. (2017). BLAST-based validation of metagenomic sequence assignments. [_bioRxiv_:181636](https://doi.org/10.1101/181636).
+
 **************************************************
 **************************************************
 
