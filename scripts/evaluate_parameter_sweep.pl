@@ -101,8 +101,10 @@ foreach $lcafile (keys %taxon_lcafiles) {
 	    }
 
 	    $foundnnlcafile = 0;
+	    $nnlcafile1 = $nnlcafile . "_x.lca";
+	    $nnlcafile2 = $nnlcafile . ".lca";
 	    foreach $nnlcafiletemp (keys %near_neighbor_lcafiles) {
-		if($nnlcafiletemp =~ /$nnlcafile/) {
+		if($nnlcafiletemp =~ /$nnlcafile1/ || $nnlcafiletemp =~ /$nnlcafile2/) {
 		    $nnlcafile = $nnlcafiletemp;
 		    $foundnnlcafile = 1;
 		    last;
