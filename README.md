@@ -12,9 +12,11 @@ Preprint available at <https://doi.org/10.1101/181636>
 ## Installation
 1. git clone --recurse-submodules https://github.com/bioforensics/blast-validate.git
 
-2. Download and install [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools)
+2. Install [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools) (located in blast-validate/scripts/Krona/KronaTools)
 
-3. (Optional, needed for parameter optimization) Download and install the [ART read simulator](https://omictools.com/art-tool)
+3. Install [NCBI BLAST+](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
+
+4. Optional: download and install the [ART read simulator](https://omictools.com/art-tool) (needed for parameter optimization)
 
 
 ----
