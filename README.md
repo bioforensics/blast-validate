@@ -10,7 +10,7 @@ Preprint available at <https://doi.org/10.1101/181636>
 
 ----
 ## Installation
-1. git clone --recurse-submodules https://github.com/bioforensics/blast-validate.git
+1. git clone https://github.com/bioforensics/blast-validate.git
 
 2. Install [KronaTools](https://github.com/marbl/Krona). Quick install below. Detailed install instruction on [Krona Wiki](https://github.com/marbl/Krona/wiki/KronaTools). 
 ```
