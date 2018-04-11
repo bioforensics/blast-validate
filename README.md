@@ -14,7 +14,7 @@ Preprint available at <https://doi.org/10.1101/181636>
 
 2. Install [KronaTools](https://github.com/marbl/KronaTools)
 
-Quick install:
+Install from source:
 ```
 git clone https://github.com/marbl/Krona
 cd Krona/KronaTools
