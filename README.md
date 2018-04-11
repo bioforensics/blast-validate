@@ -12,18 +12,19 @@ Preprint available at <https://doi.org/10.1101/181636>
 ## Installation
 1. git clone https://github.com/bioforensics/blast-validate.git
 
-2. Install [KronaTools](https://github.com/marbl/Krona). Quick install below. Detailed install instruction on [Krona Wiki](https://github.com/marbl/Krona/wiki/KronaTools). 
+2. Install [KronaTools](https://github.com/marbl/KronaTools)
+
+Quick install:
 ```
 git clone https://github.com/marbl/Krona
 cd Krona/KronaTools
-./install.pl --prefix <install directory that is in your path>
+./install.pl --prefix <directory that is in your PATH>
 ./updateTaxonomy.sh
 ```
-Install using bioconda:
+Install using [Bioconda](https://bioconda.github.io/):
 ```
 conda install krona
 ```
-
 
 3. Install [NCBI BLAST+](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 
