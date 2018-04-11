@@ -17,8 +17,9 @@ Preprint available at <https://doi.org/10.1101/181636>
 cd blast-validate/scripts/Krona/KronaTools/
 ./install.pl --prefix <install path>
 ./updateTaxonomy.sh
-```
 see krona wiki link above for more detailed instructions
+```
+
 
 3. Install [NCBI BLAST+](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 
