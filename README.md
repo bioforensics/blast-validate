@@ -12,12 +12,12 @@ Preprint available at <https://doi.org/10.1101/181636>
 ## Installation
 1. git clone --recurse-submodules https://github.com/bioforensics/blast-validate.git
 
-2. Install [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools) (located in blast-validate/scripts/Krona/KronaTools)
+2. Install [KronaTools](https://github.com/marbl/Krona). Quick install below. Detail install instruction on [Krona Wiki](https://github.com/marbl/Krona/wiki/KronaTools). 
 ```
-cd blast-validate/scripts/Krona/KronaTools/
-./install.pl --prefix <install path>
+git clone https://github.com/marbl/Krona
+cd Krona/KronaTools
+./install.pl --prefix <install directory that is in your path>
 ./updateTaxonomy.sh
-see krona wiki link above for more detailed instructions
 ```
 
 
