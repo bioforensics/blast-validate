@@ -15,9 +15,10 @@ Preprint available at <https://doi.org/10.1101/181636>
 2. Install [KronaTools](https://github.com/marbl/Krona/wiki/KronaTools) (located in blast-validate/scripts/Krona/KronaTools)
 ```
 cd blast-validate/scripts/Krona/KronaTools/
-./install.pl --prefix <install path: /usr/local default for root>
+./install.pl --prefix <install path>
 ./updateTaxonomy.sh
 ```
+see krona wiki link above for more detailed instructions
 
 3. Install [NCBI BLAST+](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 
