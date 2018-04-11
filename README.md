@@ -75,7 +75,7 @@ Example:
 
 **************************************************
 
-5.) (Optional) Perform steps 1-4 for a near neighbor genome (e.g., a *B. cereus* genome)
+5.) (Optional) Perform steps 1-4 for a near neighbor genome (e.g., a *B. cereus* genome).
 
 **************************************************
 
