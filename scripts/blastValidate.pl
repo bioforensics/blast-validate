@@ -17,13 +17,13 @@ use Getopt::Long;
 use lib (`ktGetLibPath`);
 use KronaTools;
 
-my $minCov;
-my $minId;
-my $maxEval;
+my $minCov = 0;
+my $minId = 0;
+my $maxEval = -256;
 my $minLength = 0;
 my $taxId = 0;
-my $bitWin;
-my $exclude;
+my $bitWin = 0;
+my $exclude = 0;
 my $organism;
 
 GetOptions
@@ -40,7 +40,7 @@ GetOptions
 
 if ( @ARGV < 1 )
 {
-    print STDERR "blastValidate.pl [options] <fasta> [<blast>] [<output>]\n";
+    print STDERR "blastValidate.pl [options] <fasta> [<blast>]\n";
     print STDERR "   -o str  organism (\"ba\", \"cb\", \"yp\")\n";
     print STDERR "   -c %    min coverage [0] or <value1>,<value2>,...\n";
     print STDERR "   -l int  min alignment length or <value1>,<value2>,...\n";
@@ -63,7 +63,7 @@ if ( @ARGV < 1 )
     print STDERR "   precision, using a ground truth from simulated reads.\n";
     print STDERR "\n";
     print STDERR "<blast>  defaults to <fasta>.blastn\n";
-    print STDERR "<output> defaults to <fasta>.<params>.lca, where <params> describes parameters.\n";
+    print STDERR "Output is written to <fasta>.<params>.lca, where <params> describes parameters.\n";
     
     exit;
 }
@@ -147,9 +147,29 @@ elsif ( defined $organism )
 {
     print STDERR "ERROR: unrecognized organism (\"$organism\") given to -o\n";
     exit 1;
+} else {
+    if ( ! defined $minCov )
+    {
+	$minCov = 0;
+    }
+    
+    if ( ! defined $minId )
+    {
+	$minId = 0;
+    }
+    
+    if ( ! defined $bitWin )
+    {
+	$bitWin = 0;
+    }
+
+    if ( ! defined $maxEval )
+    {
+	$maxEval = -256;
+    }
 }
 
-my ($fasta, $blast, $lca) = @ARGV;
+my ($fasta, $blast) = @ARGV;
 
 if ( ! defined $blast )
 {
@@ -397,7 +417,7 @@ sub validate_blast {
 
     my @filterArr;
     my @idOrder;
-    print STDERR "filtering hits by minLength, minCov, minId...\n";
+    print STDERR " filtering hits by minLength, minCov, minId...\n";
     my $queryIdLast;
 
     for my $line (@{$blast_lines}) {
@@ -469,7 +489,7 @@ sub validate_blast {
 	$queryIdLast = $queryId;
     }
 
-    print STDERR "applying LCA algorithm to hits...";
+    print STDERR " applying LCA algorithm to hits...\n";
     my @bits = split /,/, $bitWin;
     foreach my $bit ( @bits ) {
 	my %taxIds;
@@ -480,8 +500,10 @@ sub validate_blast {
 	# push a null string onto the end of filterArr so Krona code (which previously read from a file) works properly
 	push @filterArr, "";
 	classifyBlastArr(\@filterArr, \%taxIds, \%scores);
-	$lca = "$fasta.c$minCov\_i$minId\_l$minLength\_b$bit\_e" . (defined $maxEval ? $maxEval : "none") . ".lca";
-	# print STDERR "output $bit to $lca...\n";
+
+	my $lca = "$fasta.c$minCov\_i$minId\_l$minLength\_b$bit\_e" . (defined $maxEval ? $maxEval : "none") . ".lca";
+
+	#print STDERR "output $bit to $lca...\n";
 	
 	open LCA, ">$lca";
 	
@@ -503,7 +525,7 @@ sub validate_blast {
 	    }
 	    elsif ( $taxIds{$id} == -1 )
 	    {
-		print STDERR "$id\t-\tfiltered\n";
+		#print STDERR "$id\t-\tfiltered\n";
 		print LCA "$id\t-\tfiltered\n";
 	    }
 	    elsif ( $taxId && taxContains($taxId, $taxIds{$id}) )
