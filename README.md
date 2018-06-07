@@ -3,6 +3,11 @@
 ----
 ## Publication
 
+Published at PeerJ <https://peerj.com/articles/4892/>
+BLAST-based validation of metagenomic sequence assignments.
+Bazinet AL, Ondov BD, Sommer DD, Ratnayake S.
+PeerJ. 2018 May 28;6:e4892. doi: 10.7717/peerj.4892. eCollection 2018.
+
 Preprint available at <https://doi.org/10.1101/181636>
 
 > Bazinet, A. L., Ondov, B. D., Sommer, D. D., & Ratnayake, S. (2017). BLAST-based validation of metagenomic sequence assignments. [_bioRxiv_:181636](https://doi.org/10.1101/181636).
